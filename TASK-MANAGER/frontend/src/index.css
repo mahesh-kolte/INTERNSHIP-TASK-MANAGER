@@ -1,0 +1,415 @@
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(
+    135deg,
+    #0f172a,
+    #1e293b,
+    #334155
+  );
+  min-height: 100vh;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 30px 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 20px 30px;
+
+  background: rgba(255, 255, 255, 0.1);
+
+  backdrop-filter: blur(15px);
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  border-radius: 15px;
+
+  margin-bottom: 30px;
+
+  animation: slideDown 0.8s ease;
+}
+
+.navbar h1 {
+  color: white;
+
+  animation: glow 2s infinite alternate;
+}
+
+.logout-btn {
+  background: #ef4444;
+  color: white;
+
+  border: none;
+
+  padding: 12px 20px;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  transition: 0.4s;
+}
+
+.logout-btn:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 0 15px #ef4444,
+    0 0 30px #ef4444;
+}
+
+.task-form {
+  background: rgba(255, 255, 255, 0.1);
+
+  backdrop-filter: blur(15px);
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  padding: 25px;
+
+  border-radius: 15px;
+
+  margin-bottom: 30px;
+
+  animation: fadeIn 1s ease;
+}
+
+.task-form input,
+.task-form textarea {
+  width: 100%;
+
+  padding: 14px;
+
+  margin-bottom: 15px;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.1);
+
+  color: white;
+
+  outline: none;
+
+  transition: 0.3s;
+}
+
+.task-form input::placeholder,
+.task-form textarea::placeholder {
+  color: #d1d5db;
+}
+
+.task-form input:focus,
+.task-form textarea:focus {
+  border-color: #3b82f6;
+
+  box-shadow: 0 0 15px #3b82f6;
+}
+
+.task-form button {
+  width: 100%;
+
+  background: #2563eb;
+
+  color: white;
+
+  border: none;
+
+  padding: 14px;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  transition: 0.4s;
+}
+
+.task-form button:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 0 15px #2563eb,
+    0 0 30px #2563eb;
+}
+
+.task-list {
+  display: grid;
+
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(300px, 1fr)
+  );
+
+  gap: 25px;
+}
+
+.task-card {
+  background: rgba(255, 255, 255, 0.1);
+
+  backdrop-filter: blur(20px);
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  border-radius: 15px;
+
+  padding: 20px;
+
+  color: white;
+
+  transition: 0.4s;
+
+  animation: cardPop 0.6s ease;
+}
+
+.task-card:hover {
+  transform: translateY(-10px) scale(1.03);
+
+  box-shadow:
+    0 0 20px rgba(59, 130, 246, 0.5),
+    0 0 40px rgba(59, 130, 246, 0.3);
+}
+
+.task-card h3 {
+  color: #60a5fa;
+
+  margin-bottom: 10px;
+}
+
+.task-card p {
+  margin-bottom: 10px;
+
+  color: #e5e7eb;
+}
+
+.auth-container {
+  width: 400px;
+
+  margin: 80px auto;
+
+  background: rgba(255, 255, 255, 0.1);
+
+  backdrop-filter: blur(20px);
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  padding: 30px;
+
+  border-radius: 15px;
+
+  animation: fadeIn 1s ease;
+}
+
+.auth-container h1 {
+  text-align: center;
+
+  color: white;
+
+  margin-bottom: 20px;
+}
+
+.auth-container input {
+  width: 100%;
+
+  padding: 14px;
+
+  margin-bottom: 15px;
+
+  border-radius: 10px;
+
+  border: 1px solid rgba(255,255,255,0.2);
+
+  background: rgba(255,255,255,0.1);
+
+  color: white;
+}
+
+.auth-container button {
+  width: 100%;
+
+  padding: 14px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background: #2563eb;
+
+  color: white;
+
+  cursor: pointer;
+
+  transition: 0.4s;
+}
+
+.auth-container button:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 0 15px #2563eb,
+    0 0 30px #2563eb;
+}
+
+.auth-container p {
+  margin-top: 15px;
+
+  text-align: center;
+
+  color: white;
+}
+
+.auth-container a {
+  color: #60a5fa;
+
+  text-decoration: none;
+
+  font-weight: bold;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes cardPop {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #60a5fa;
+  }
+
+  to {
+    text-shadow:
+      0 0 20px #60a5fa,
+      0 0 40px #60a5fa;
+  }
+}
+ .btn-group {
+  display: flex;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.edit-btn {
+  flex: 1;
+  background: linear-gradient(
+    135deg,
+    #22c55e,
+    #16a34a
+  );
+
+  color: white;
+  border: none;
+
+  padding: 12px;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  font-weight: bold;
+
+  transition: 0.4s;
+}
+
+.edit-btn:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 0 15px #22c55e,
+    0 0 30px #22c55e;
+}
+
+.delete-btn {
+  flex: 1;
+
+  background: linear-gradient(
+    135deg,
+    #ef4444,
+    #dc2626
+  );
+
+  color: white;
+
+  border: none;
+
+  padding: 12px;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  font-weight: bold;
+
+  transition: 0.4s;
+}
+
+.delete-btn:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 0 15px #ef4444,
+    0 0 30px #ef4444;
+}
+
+.status {
+  display: inline-block;
+
+  background: linear-gradient(
+    135deg,
+    #22c55e,
+    #16a34a
+  );
+
+  color: white;
+
+  padding: 5px 12px;
+
+  border-radius: 20px;
+
+  font-size: 13px;
+
+  font-weight: bold;
+
+  margin-left: 8px;
+}
